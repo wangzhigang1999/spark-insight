@@ -1,0 +1,32 @@
+[package]
+name = "spark-insight"
+version = "0.1.0"
+edition = "2021"
+description = "Rust-based Spark Eventlog intelligent analysis tool"
+
+[[bin]]
+name = "spark-insight"
+path = "src/main.rs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+arrow = { version = "53", features = ["ipc"] }
+parquet = { version = "53", features = ["arrow"] }
+datafusion = "43"
+tokio = { version = "1", features = ["full"] }
+clap = { version = "4", features = ["derive"] }
+ratatui = "0.29"
+crossterm = "0.28"
+tui-input = "0.10"
+comfy-table = "7"
+indicatif = "0.17"
+anyhow = "1"
+thiserror = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+dirs = "5"
+chrono = "0.4"
+
+[dev-dependencies]
+tempfile = "3"
